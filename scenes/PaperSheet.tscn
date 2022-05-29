@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/PaperSheet.cs" type="Script" id=1]
+[ext_resource path="res://sprites/empty_paper.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Font.png" type="Texture" id=3]
+
+[node name="PaperSheet" type="Node2D"]
+position = Vector2( 900, 0 )
+scale = Vector2( 10, 10 )
+script = ExtResource( 1 )
+Font = ExtResource( 3 )
+
+[node name="PixelCoin" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

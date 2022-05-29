@@ -1,0 +1,207 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/GameOverScreen.cs" type="Script" id=1]
+[ext_resource path="res://scripts/CanvasText.cs" type="Script" id=2]
+[ext_resource path="res://scripts/PlayAgainButton.cs" type="Script" id=3]
+[ext_resource path="res://sprites/Font.png" type="Texture" id=4]
+[ext_resource path="res://sprites/playAgainText.tres" type="Texture" id=5]
+[ext_resource path="res://sprites/tableB.png" type="Texture" id=6]
+
+[sub_resource type="Shader" id=16]
+code = "shader_type canvas_item;
+
+uniform 
+
+void fragment () {
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
+
+[sub_resource type="Image" id=22]
+data = {
+"data": PoolByteArray( 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 5,
+"mipmaps": false,
+"width": 76
+}
+
+[sub_resource type="ImageTexture" id=19]
+flags = 3
+flags = 3
+image = SubResource( 22 )
+size = Vector2( 76, 5 )
+
+[sub_resource type="ImageTexture" id=21]
+size = Vector2( 1, 1 )
+
+[node name="GameOverScreen" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+AnimLength = 1.5
+noTexts = 7
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 17, 17 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Texts" type="VBoxContainer" parent="."]
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+alignment = 1
+
+[node name="Text" type="Control" parent="Texts"]
+margin_top = 16.0
+margin_right = 614.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "play again"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.5
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Text2" type="Control" parent="Texts"]
+margin_top = 70.0
+margin_right = 614.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text2"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Text3" type="Control" parent="Texts"]
+margin_top = 124.0
+margin_right = 614.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text3"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Text4" type="Control" parent="Texts"]
+margin_top = 178.0
+margin_right = 614.0
+margin_bottom = 228.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text4"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Text5" type="Control" parent="Texts"]
+margin_top = 232.0
+margin_right = 614.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text5"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Text6" type="Control" parent="Texts"]
+margin_top = 286.0
+margin_right = 614.0
+margin_bottom = 336.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text6"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Text7" type="Control" parent="Texts"]
+margin_top = 340.0
+margin_right = 614.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 2 )
+_font = ExtResource( 4 )
+text = "pqrvxyzbhuuhbhhuuhb"
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Text7"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="Texts"]
+margin_top = 394.0
+margin_right = 614.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 0, 70 )
+
+[node name="TextureRect" type="TextureRect" parent="Texts/Control"]
+modulate = Color( 1, 1, 1, 0.25098 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 21 )
+expand = true
+
+[node name="Button" type="TextureButton" parent="Texts/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+rect_min_size = Vector2( 0, 50 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+playAgainButtonPath = NodePath("../../..")

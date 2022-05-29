@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/Text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/StampMark.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/stampMarkOther.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Contract.cs" type="Script" id=4]
+[ext_resource path="res://sprites/contractSeal.png" type="Texture" id=5]
+[ext_resource path="res://sprites/stampMarkAccept.png" type="Texture" id=6]
+[ext_resource path="res://sprites/stampMarkDecline.png" type="Texture" id=7]
+[ext_resource path="res://sprites/contract.png" type="Texture" id=8]
+[ext_resource path="res://stamp_shader.shader" type="Shader" id=9]
+[ext_resource path="res://audio/ui/error_008.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/cards/chipsStack3.ogg" type="AudioStream" id=11]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 9 )
+shader_param/stampPos = Vector2( -1, -1 )
+shader_param/stampMarkSize = Vector2( 24, 7 )
+shader_param/stampMark = ExtResource( 6 )
+
+[node name="Contract" type="Node2D"]
+script = ExtResource( 4 )
+StampMark = ExtResource( 2 )
+acceptTexture = ExtResource( 6 )
+declineTexture = ExtResource( 7 )
+otherTexture = ExtResource( 3 )
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Contract" type="Sprite" parent="Graphics"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="TextMoney" parent="Graphics" instance=ExtResource( 1 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, -73.27 )
+scale = Vector2( 4, 4 )
+AlignLeft = false
+Text = "3 Coins"
+
+[node name="Amount" parent="Graphics" instance=ExtResource( 1 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, -46.492 )
+scale = Vector2( 3, 3 )
+AlignLeft = false
+Text = "9 pages"
+
+[node name="TextAmount2" parent="Graphics" instance=ExtResource( 1 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, -26.055 )
+scale = Vector2( 2.9, 3 )
+AlignLeft = false
+Text = "stamp with"
+
+[node name="TextAmount3" parent="Graphics" instance=ExtResource( 1 )]
+position = Vector2( 0, -4.325 )
+scale = Vector2( 3, 3 )
+AlignLeft = false
+Text = "\\aa\\ab"
+
+[node name="TextAmount4" parent="Graphics" instance=ExtResource( 1 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, 13.673 )
+scale = Vector2( 3, 3 )
+AlignLeft = false
+Text = "paperclip"
+
+[node name="Seal" type="Sprite" parent="Graphics"]
+visible = false
+modulate = Color( 1, 1, 1, 0.741176 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Stamps" type="Node2D" parent="."]
+
+[node name="StampMark" parent="Stamps" instance=ExtResource( 2 )]
+visible = false
+material = SubResource( 1 )
+
+[node name="errorAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="coinsAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

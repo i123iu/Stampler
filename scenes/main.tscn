@@ -1,0 +1,293 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://sprites/StampInk.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/PaperClip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/cards/cardSlide1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scripts/Controls.cs" type="Script" id=5]
+[ext_resource path="res://sprites/bin.png" type="Texture" id=6]
+[ext_resource path="res://scripts/Stamp.cs" type="Script" id=7]
+[ext_resource path="res://sprites/stampConfirm.png" type="Texture" id=8]
+[ext_resource path="res://sprites/circleAnim.png" type="Texture" id=9]
+[ext_resource path="res://scripts/MovableItemDefault.cs" type="Script" id=10]
+[ext_resource path="res://sprites/table.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Text.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Stamp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/StampColorPalet.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Contract.tscn" type="PackedScene" id=15]
+[ext_resource path="res://sprites/circle.png" type="Texture" id=16]
+[ext_resource path="res://sprites/circleinside.png" type="Texture" id=17]
+[ext_resource path="res://scenes/PaperSheet.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/AnimPlayer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://audio/ui/confirmation_001.ogg" type="AudioStream" id=21]
+[ext_resource path="res://audio/cards/chipsHandle6.ogg" type="AudioStream" id=24]
+[ext_resource path="res://scripts/AlarmClock.cs" type="Script" id=25]
+[ext_resource path="res://sprites/alarmClock.png" type="Texture" id=26]
+[ext_resource path="res://audio/cards/stepwater_1.wav" type="AudioStream" id=27]
+[ext_resource path="res://sprites/Font.png" type="Texture" id=28]
+[ext_resource path="res://scripts/NewContractProgressBar.cs" type="Script" id=29]
+[ext_resource path="res://scenes/GroupedPapers.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scripts/Arrow.cs" type="Script" id=32]
+[ext_resource path="res://sprites/arrow.png" type="Texture" id=33]
+[ext_resource path="res://audio/ui/click4.ogg" type="AudioStream" id=35]
+[ext_resource path="res://audio/ui/click5.ogg" type="AudioStream" id=36]
+[ext_resource path="res://sprites/alarmClockTop.png" type="Texture" id=37]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 9 )
+region = Rect2( 8, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 9 )
+region = Rect2( 24, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 9 )
+region = Rect2( 40, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 9 )
+region = Rect2( 48, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 9 )
+region = Rect2( 56, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 9 )
+region = Rect2( 64, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 72, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 9 )
+region = Rect2( 80, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 9 )
+region = Rect2( 88, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 9 )
+region = Rect2( 96, 0, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -0.00012207
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 17, 17 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 50, 550 )
+z_index = 1
+script = ExtResource( 29 )
+
+[node name="back cicrcel" type="Sprite" parent="Node2D"]
+modulate = Color( 0.478431, 0.482353, 0, 1 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 17 )
+
+[node name="anim" type="AnimatedSprite" parent="Node2D"]
+modulate = Color( 1, 0.984314, 0, 1 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 15 )
+
+[node name="outline" type="Sprite" parent="Node2D"]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 16 )
+
+[node name="text" type="Sprite" parent="Node2D"]
+visible = false
+modulate = Color( 0, 0, 0, 0.705882 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+hframes = 60
+region_rect = Rect2( 5, 0, 5, 5 )
+
+[node name="Arrow" type="Node2D" parent="."]
+position = Vector2( 960, 512 )
+z_index = 1
+script = ExtResource( 32 )
+Speed = 128.0
+StartPos = 160.0
+
+[node name="back cicrcel" type="Sprite" parent="Arrow"]
+modulate = Color( 0.478431, 0.482353, 0, 1 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 17 )
+
+[node name="arrow" type="Sprite" parent="Arrow"]
+visible = false
+modulate = Color( 1, 0.984314, 0, 1 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 33 )
+
+[node name="anim" type="AnimatedSprite" parent="Arrow"]
+modulate = Color( 1, 0.984314, 0, 1 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 14 )
+
+[node name="outline" type="Sprite" parent="Arrow"]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 16 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Arrow"]
+stream = ExtResource( 21 )
+
+[node name="Controls" type="Node" parent="."]
+process_priority = 1
+script = ExtResource( 5 )
+SmoothAmount = 0.33
+DragMinDist = 5.0
+CardFlipAnimLength = 0.1
+RecycleBinRange = 80.0
+RecycleBinPath = NodePath("RecycleBin")
+animPlayerPrefab = ExtResource( 20 )
+PaperClipPrefab = ExtResource( 3 )
+PaperSheetPrefab = ExtResource( 19 )
+ContractPrefab = ExtResource( 15 )
+StampColorPaletPrefab = ExtResource( 14 )
+StampPrefab = ExtResource( 13 )
+newContractProgressBarPath = NodePath("../Node2D")
+emptyPaperSheetGenerator = NodePath("PaperSheet")
+paperClipGenerator = NodePath("PaperClip")
+GroupedPapersPrefab = ExtResource( 31 )
+CoinPrefab = ExtResource( 2 )
+arrowPath = NodePath("../Arrow")
+
+[node name="PaperClip" parent="Controls" instance=ExtResource( 3 )]
+position = Vector2( 800, 0 )
+
+[node name="RecycleBin" type="Node2D" parent="Controls"]
+position = Vector2( 600, 95 )
+scale = Vector2( 8, 8 )
+script = ExtResource( 10 )
+
+[node name="Bin" type="Sprite" parent="Controls/RecycleBin"]
+texture = ExtResource( 6 )
+
+[node name="AlarmClock" type="Node2D" parent="Controls"]
+position = Vector2( 650, 239.517 )
+script = ExtResource( 25 )
+AnimLength = 0.5
+
+[node name="Top" type="Node2D" parent="Controls/AlarmClock"]
+scale = Vector2( 5, 5 )
+
+[node name="SpriteTop" type="Sprite" parent="Controls/AlarmClock/Top"]
+texture = ExtResource( 37 )
+
+[node name="Coin" type="Node2D" parent="Controls/AlarmClock"]
+position = Vector2( -5.05, -47.412 )
+
+[node name="Bot" type="Node2D" parent="Controls/AlarmClock"]
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" type="Sprite" parent="Controls/AlarmClock/Bot"]
+texture = ExtResource( 26 )
+
+[node name="Min" parent="Controls/AlarmClock/Bot" instance=ExtResource( 12 )]
+modulate = Color( 0.572549, 0.14902, 0.14902, 1 )
+position = Vector2( -10.5, 1 )
+scale = Vector2( 1, 1 )
+Text = "XX"
+
+[node name="Sec" parent="Controls/AlarmClock/Bot" instance=ExtResource( 12 )]
+modulate = Color( 0.572549, 0.14902, 0.14902, 1 )
+position = Vector2( 0, 1 )
+scale = Vector2( 1, 1 )
+Text = "XX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Controls/AlarmClock/Bot"]
+stream = ExtResource( 35 )
+volume_db = -14.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Controls/AlarmClock/Bot"]
+stream = ExtResource( 36 )
+volume_db = -14.0
+
+[node name="audio coin" type="AudioStreamPlayer" parent="Controls/AlarmClock/Bot"]
+stream = ExtResource( 24 )
+
+[node name="PaperSheet" parent="Controls" instance=ExtResource( 19 )]
+
+[node name="StampColorPalet" parent="Controls" instance=ExtResource( 14 )]
+position = Vector2( 400, 100 )
+stampColor = 1
+
+[node name="StampColorPalet2" parent="Controls" instance=ExtResource( 14 )]
+position = Vector2( 305, 110 )
+
+[node name="ContractStamp" type="Node2D" parent="Controls"]
+position = Vector2( 125, 211 )
+scale = Vector2( 5, 5 )
+script = ExtResource( 7 )
+IsContractStamp = true
+LEGNTH_ANIM_1 = 0.2
+AMOUNT_ANIM_1 = -5.0
+LEGNTH_ANIM_2 = 0.1
+AMOUNT_ANIM_2 = 5.0
+LEGNTH_ANIM_3 = 0.2
+AMOUNT_ANIM_3 = 0.0
+
+[node name="Graphics" type="Node2D" parent="Controls/ContractStamp"]
+
+[node name="Stamp" type="Sprite" parent="Controls/ContractStamp/Graphics"]
+texture = ExtResource( 8 )
+
+[node name="Ink" type="Sprite" parent="Controls/ContractStamp/Graphics"]
+visible = false
+texture = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Controls/ContractStamp"]
+stream = ExtResource( 4 )
+volume_db = -8.0
+
+[node name="water audio" type="AudioStreamPlayer" parent="Controls/ContractStamp"]
+stream = ExtResource( 27 )
+volume_db = -4.0
+
+[node name="Stamp" parent="Controls" instance=ExtResource( 13 )]
+position = Vector2( 500, 260 )
+
+[editable path="Controls/PaperClip"]

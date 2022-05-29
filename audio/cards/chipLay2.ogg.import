@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chipLay2.ogg-79152cf7247f7535a7ff7110ee992ad0.oggstr"
+
+[deps]
+
+source_file="res://audio/cards/chipLay2.ogg"
+dest_files=[ "res://.import/chipLay2.ogg-79152cf7247f7535a7ff7110ee992ad0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
